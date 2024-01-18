@@ -66,14 +66,16 @@ const { data: photos } = await getPhotos();
 console.log(`Photos : ${photos?.length}`);
 
 await Promise.allSettled([getPosts(), getComments(), getPhotos()]).then(
-  (results) => {
-    results.forEach(({ status, value: { success, source, data } }) => {
-      if (status === "fulfilled") {
-        success && console.log(`${source} Length : ${data.length}`);
-        console.log("*".repeat(20));
-      }
-    });
-  }
+  handler
 );
+
+function handler(results) {
+  results.forEach(({ status, value: { success, source, data } }) => {
+    if (status === "fulfilled") {
+      success && console.log(`${source} Length : ${data.length}`);
+      console.log("*".repeat(20));
+    }
+  });
+}
 
 export default {};
