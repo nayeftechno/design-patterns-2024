@@ -1,4 +1,8 @@
-import { AddCommand, MultiplyCommand } from "./Commands.js";
+import {
+  AddCommand,
+  MultiplyCommand,
+  AddThenMultiplyCommand,
+} from "./Commands.js";
 
 class Calculator {
   constructor() {
@@ -42,5 +46,8 @@ calculator.undoCommand();
 calculator.undoCommand();
 
 calculator.divider();
+
+calculator.excuteCommand(new AddThenMultiplyCommand(5, 3));
+calculator.undoCommand();
 
 export default {};
