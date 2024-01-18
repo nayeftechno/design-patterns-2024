@@ -1,4 +1,4 @@
-import { AddCommand } from "./Commands.js";
+import { AddCommand, MultiplyCommand } from "./Commands.js";
 
 class Calculator {
   constructor() {
@@ -27,6 +27,16 @@ const calculator = new Calculator();
 
 calculator.excuteCommand(new AddCommand(2));
 calculator.excuteCommand(new AddCommand(5));
+
+calculator.undoCommand();
+calculator.undoCommand();
+
+calculator.divider();
+
+calculator.excuteCommand(new AddCommand(1));
+
+calculator.excuteCommand(new MultiplyCommand(2));
+calculator.excuteCommand(new MultiplyCommand(3));
 
 calculator.undoCommand();
 calculator.undoCommand();

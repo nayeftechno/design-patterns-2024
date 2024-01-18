@@ -10,4 +10,16 @@ class AddCommand {
   }
 }
 
-export { AddCommand };
+class MultiplyCommand {
+  constructor(valueToMultiply) {
+    this.valueToMultiply = valueToMultiply;
+  }
+  excute(currentValue) {
+    return this.valueToMultiply * currentValue;
+  }
+  undo(currentValue) {
+    return currentValue / this.valueToMultiply;
+  }
+}
+
+export { AddCommand, MultiplyCommand };
