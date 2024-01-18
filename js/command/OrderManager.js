@@ -1,4 +1,8 @@
-import { PlaceOrderCommand, CancelOrderCommand } from "./Commands.js";
+import {
+  PlaceOrderCommand,
+  CancelOrderCommand,
+  TrackOrderCommand,
+} from "./Commands.js";
 
 const user = Object.freeze({
   username: "Reem Salim",
@@ -28,5 +32,7 @@ orderManager.excuteCommand(new PlaceOrderCommand("300"), user);
 
 orderManager.excuteCommand(new CancelOrderCommand("100"), user);
 orderManager.excuteCommand(new CancelOrderCommand("300"));
+
+orderManager.excuteCommand(new TrackOrderCommand("200"));
 
 export default {};

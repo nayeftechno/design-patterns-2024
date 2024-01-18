@@ -60,6 +60,17 @@ class CancelOrderCommand {
   }
 }
 
+class TrackOrderCommand {
+  constructor(id) {
+    this.id = id;
+  }
+  excute(orders, user) {
+    user && console.log(user);
+    console.log(`Your order ${this.id}, will be arrive in 20 minutes`);
+    return [...orders];
+  }
+}
+
 //////////////////////////////////////////////////////////////////
 
 export {
@@ -68,4 +79,5 @@ export {
   AddThenMultiplyCommand,
   PlaceOrderCommand,
   CancelOrderCommand,
+  TrackOrderCommand,
 };
