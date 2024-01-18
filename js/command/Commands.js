@@ -49,6 +49,17 @@ class PlaceOrderCommand {
   }
 }
 
+class CancelOrderCommand {
+  constructor(id) {
+    this.id = id;
+  }
+  excute(orders, user) {
+    user && console.log(user);
+    console.log(`You cancelled : ${this.id}`);
+    return [...orders.filter((id) => id !== this.id)];
+  }
+}
+
 //////////////////////////////////////////////////////////////////
 
 export {
@@ -56,4 +67,5 @@ export {
   MultiplyCommand,
   AddThenMultiplyCommand,
   PlaceOrderCommand,
+  CancelOrderCommand,
 };
