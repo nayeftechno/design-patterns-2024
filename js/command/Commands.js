@@ -35,4 +35,25 @@ class AddThenMultiplyCommand {
   }
 }
 
-export { AddCommand, MultiplyCommand, AddThenMultiplyCommand };
+//////////////////////////////////////////////////////////////////
+
+class PlaceOrderCommand {
+  constructor(id) {
+    this.id = id;
+  }
+  excute(orders, user) {
+    user && console.log(user);
+    console.log(`You ordered : ${this.id}`);
+    orders.push(this.id);
+    return [...orders];
+  }
+}
+
+//////////////////////////////////////////////////////////////////
+
+export {
+  AddCommand,
+  MultiplyCommand,
+  AddThenMultiplyCommand,
+  PlaceOrderCommand,
+};
