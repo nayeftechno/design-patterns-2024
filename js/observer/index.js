@@ -1,21 +1,21 @@
-import observable from "./Observable.js";
+import { observable } from "./Observable.js";
 
-(() => {
-  function eat(data) {
-    console.log(`${data} Eat`);
-  }
+(function () {
   function walk(data) {
-    console.log(`${data} Walk`);
+    console.log(`${data} Walk...`);
   }
-  function speak(data) {
-    console.log(`${data} Speak`);
+  function talk(data) {
+    console.log(`${data} Talk...`);
+  }
+  function swim(data) {
+    console.log(`${data} Swim...`);
   }
 
-  observable.subscribe(eat);
-  observable.subscribe(walk);
-  observable.subscribe(speak);
+  observable.subscribe(walk).subscribe(talk).subscribe(swim);
 
-  document.getElementById("btn-notify").addEventListener("click", function (_) {
-    observable.notify("HELLO");
-  });
+  function handleClick(e) {
+    observable.notify("Hi 🌴 🌴 🌴");
+  }
+
+  document.querySelector("#btn-notify").addEventListener("click", handleClick);
 })();
